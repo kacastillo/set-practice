@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * The UniqueCharacterChecker class provides a method to check if all characters
  * in a given word are unique.
@@ -14,8 +20,17 @@ public class UniqueCharacterChecker {
         // TODO: implement this!
         // Requirement: This must run in O(n) time, where n is the number of characters in the word
         // Hint: Stuck? Consider looking up "charAt" and seeing how it can help you
-        return false;
+
+        Set<Character> unique = new HashSet<>();
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+        if (unique.contains(c)) {
+            return false; 
+        }
+        unique.add(c);
     }
+    return true;
+}
 
     public static void main(String[] args) {
         String word1 = "hello";
